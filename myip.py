@@ -1,7 +1,7 @@
 """myip.py
 
 Usage:
-    myip.py [-hvq46]
+    myip.py [-hvlq46]
 
 Options:
 
@@ -10,18 +10,23 @@ Options:
     -6 --six        Show the IPv6 address 
     -4 --four       Show the IPv4 address only
     -q --quiet      Return only the address
+    -l --loop       Run in loop
 
 """
 
-from lib.docopt import docopt
+from docopt import docopt
 from getip import getip
+from pyfile import pyfile
 
 
 arguments = docopt(__doc__, version='0.0.1')
 
 if arguments['-q'] is True:
     print(getip())
+    exit(0)
+
+print(arguments)
 
 if arguments['-l'] is True:
-    
+    print("Loop")    
     

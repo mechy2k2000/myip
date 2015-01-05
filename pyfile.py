@@ -8,18 +8,11 @@ Note that the "log"  file is in the same directory for right now
 
 import logging
 import os
+  
 
 
-        
 
-#def __init__(self, name, filepath):
-#    self.name = name
-#    self.file = filepath
-#    self.cwd = os.getcwd()
-#    self.lastline = 0
-#     self.firstline = 0
-#     self.linecount = 0
-
+       
 
 def getlastline(file):
         

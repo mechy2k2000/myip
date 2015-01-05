@@ -1,0 +1,9 @@
+INFO 2014-12-30 17:50:59,213 x.x.x.x
+INFO 2014-12-30 17:51:03,111 x.x.x.x
+INFO 2014-12-30 17:51:38,533 x.x.x.x
+DEBUG 2014-12-30 17:51:48,996 writeFile called, writing to log now
+INFO 2014-12-30 17:51:48,997 x.x.x.x
+DEBUG 2014-12-30 17:52:00,164 writeFile called, writing to log now
+INFO 2014-12-30 17:52:00,166 x.x.x.x
+DEBUG 2014-12-30 17:52:03,716 writeFile called, writing to log now
+INFO 2014-12-30 17:52:03,717 x.x.x.x
