@@ -12,13 +12,23 @@ import os
 
         
 
-#def __init__(self, name, filepath):
-#    self.name = name
-#    self.file = filepath
-#    self.cwd = os.getcwd()
-#    self.lastline = 0
-#     self.firstline = 0
-#     self.linecount = 0
+def __init__(self, name, filepath):
+    self.name = name
+    self.file = filepath
+    self.cwd = os.getcwd()
+    self.lastline = 0
+    self.firstline = 0
+    self.linecount = 0
+
+def getlastlinecount(file):
+    count = 0
+    try:
+        for line in file:
+            count = count + 1
+        return count
+    except:         #TODO have the proper exceptions returned  
+        Print("Something happen returning the last line count")
+        
 
 
 def getlastline(file):

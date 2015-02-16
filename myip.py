@@ -1,7 +1,9 @@
+#! /usr/bin/python3
+
 """myip.py
 
 Usage:
-    myip.py [-hvq46]
+    myip.py [-havqd46] [-l PERIOD] [-T]
 
 Options:
 
@@ -10,18 +12,50 @@ Options:
     -6 --six        Show the IPv6 address 
     -4 --four       Show the IPv4 address only
     -q --quiet      Return only the address
-
+    -l --loop       Run in a loop
+    -d --debug      Run in debug mode
+    -T              Print timestamp  
+    -a              Print arguments
 """
 
 from lib.docopt import docopt
 from getip import getip
-
+import datetime
+import time
+import decimal
 
 arguments = docopt(__doc__, version='0.0.1')
 
-if arguments['-q'] is True:
-    print(getip())
+def loop(PERIOD):
+    while quit is False:
+        start = time.time()
+        print("Start: " + time.strftime("%H:%M:%S"))
+        print(getip())
+        
+        time.sleep(PERIOD)
 
-if arguments['-l'] is True:
+
+# Run main 
+
+#TODO arrange "if logic in a more sensible order i.e. -l maybe needs to be last"
+
+if __name__ == "__main__":
+    if arguments['-q'] is True:
+        print(getip())
     
+    elif arguments['-l'] is True:
+        print("loop")  
+        print("RUN IN A LOOP")
+        print(decimal(arguments['PERIOD']))
+        loop(arguments['PERIOD'])
+       
     
+    elif arguments['-d']:
+        print("******** Debug MODE **********")
+        print(arguments)
+    
+    elif arguments['-T']:
+        print('Timestamp')
+    else: 
+        print(getip())
+        
