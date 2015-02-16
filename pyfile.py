@@ -8,8 +8,10 @@ Note that the "log"  file is in the same directory for right now
 
 import logging
 import os
+  
 
 
+<<<<<<< HEAD
         
 
 def __init__(self, name, filepath):
@@ -29,7 +31,10 @@ def getlastlinecount(file):
     except:         #TODO have the proper exceptions returned  
         Print("Something happen returning the last line count")
         
+=======
+>>>>>>> a1ca7c32f48686d1ea5e3d6365161c6ba94b5553
 
+       
 
 def getlastline(file):
         

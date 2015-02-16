@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import datetime, time
 import sys
 sys.path.append("..")
