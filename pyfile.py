@@ -9,10 +9,7 @@ Note that the "log"  file is in the same directory for right now
 import logging
 import os
   
-
-
-<<<<<<< HEAD
-        
+       
 
 def __init__(self, name, filepath):
     self.name = name
@@ -31,11 +28,6 @@ def getlastlinecount(file):
     except:         #TODO have the proper exceptions returned  
         Print("Something happen returning the last line count")
         
-=======
->>>>>>> a1ca7c32f48686d1ea5e3d6365161c6ba94b5553
-
-       
-
 def getlastline(file):
         
      # Gets the line count for the log.log file and sets the varible
@@ -54,17 +46,23 @@ def getlastline(file):
     
         
 def writeFile(file, ip, debug=False):
-
     """
     writeFile is the method to write to the log file using python's logger 
     give the method self for variables, ip for the ip to write to, and 
     debug verbose about what its doing
     """
 
+    
     logging.basicConfig(filename='log.log', level=logging.DEBUG, 
                         format='%(levelname)s %(asctime)s %(message)s') 
+    
+    print(ip)
+    
+    
+    
     try:
-        if ip:
+        if ip :
+            
             if debug == True:                                            #
                 print('Debug mode: writeFILE called writing to file!!') 
                 print("Current Working Directory: %s"  % os.getcwd())
@@ -80,7 +78,7 @@ def writeFile(file, ip, debug=False):
             print("Something went wrong ({0}): {1}".format(e.errno, e.strerror))
     
     except Exception as e:
-        print('the ip address is needed!!')
+        print('the ip address is needed!!' + "Exception: " ) #TODO return the string of the error 
         if debug == True: 
             logging.debug("writeFile was called threw an exception ({0}): {1}".format(e.errno, e.strerror))
     

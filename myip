@@ -3,7 +3,7 @@
 """myip.py
 
 Usage:
-    myip.py [-havqd46] [-l PERIOD] [-T]
+    myip.py [-havqd46] [-l PERIOD] [-T] [--loop PERIOD] [-u --url URL]
 
 Options:
 
@@ -16,13 +16,15 @@ Options:
     -d --debug      Run in debug mode
     -T              Print timestamp  
     -a              Print arguments
+    -u --url        get ip from this link
+    
 """
 
 from lib.docopt import docopt
 from getip import getip
 import datetime
 import time
-import decimal
+from decimal import Decimal
 
 arguments = docopt(__doc__, version='0.0.1')
 
@@ -43,11 +45,14 @@ if __name__ == "__main__":
     if arguments['-q'] is True:
         print(getip())
     
-    elif arguments['-l'] is True:
+    elif arguments['-l'] or arguments['--loop']is True:
         print("loop")  
         print("RUN IN A LOOP")
-        print(decimal(arguments['PERIOD']))
-        loop(arguments['PERIOD'])
+        try:
+            print(Decimal(arguments['PERIOD']))
+        except :
+            print("I need a number!!")
+        #loop(arguments['PERIOD'])
        
     
     elif arguments['-d']:
@@ -55,7 +60,7 @@ if __name__ == "__main__":
         print(arguments)
     
     elif arguments['-T']:
-        print("Timestamp: " + time.strftime("%H:%M:%S"))
+        print('Timestamp: ' + time.strftime("%D %H:%M:%S") + getip()) 
     else: 
         print(getip())
         
