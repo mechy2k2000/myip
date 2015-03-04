@@ -23,6 +23,8 @@ from getip import getip
 import datetime
 import time
 import decimal
+import pyfile
+
 
 arguments = docopt(__doc__, version='0.0.1')
 
@@ -38,6 +40,7 @@ def loop(PERIOD):
 # Run main 
 
 #TODO arrange "if logic in a more sensible order i.e. -l maybe needs to be last"
+file = "log.log"
 
 if __name__ == "__main__":
     if arguments['-q'] is True:
@@ -53,6 +56,7 @@ if __name__ == "__main__":
     elif arguments['-d']:
         print("******** Debug MODE **********")
         print(arguments)
+        pyfile.writeFile(file,getip())
     
     elif arguments['-T']:
         print("Timestamp: " + time.strftime("%H:%M:%S"))
